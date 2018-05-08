@@ -1,0 +1,19 @@
+{
+  "name": "usermanagmentsystem",
+  "version": "0.0.1",
+  "description": "user management system in node api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyotiad18/UserManagmentSystem.git"
+  },
+  "author": "jyoti adhikari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jyotiad18/UserManagmentSystem/issues"
+  },
+  "homepage": "https://github.com/jyotiad18/UserManagmentSystem#readme"
+}
