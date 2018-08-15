@@ -18,18 +18,31 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
 app.use(morgan('dev')); // use morgan to log requests to the console
-app.set('authToken',config.secret);
-/*app.use(session({
+app.set('superSecret',config.secret);
+
+app.use(session({
 		secret : 'sssshhhhh' ,
 		saveUninitialized: true,
 		maxAge : 60000
 		})
  );
-*/
 
-app.use("/api/token",(req,res)=>{
-    
-})
+
+ app.use((req,res,next)=>{
+	 switch(req.url)
+	 {
+		 case '/home':
+		 case '/':
+		 next();
+		 break;
+		 default:
+			 app.use('/api/',[
+				 require('./route/login.js')
+			 ]);
+			 next();
+			 break;
+	 }
+ })
 
 
 app.listen(port , ()=> {

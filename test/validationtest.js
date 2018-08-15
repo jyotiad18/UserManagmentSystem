@@ -14,7 +14,7 @@ describe('Check Validation File',()=>{
         
         // Arrange
         var value = {
-             typename : 'teacher'
+             typename : ''
         }
 
         //act 
